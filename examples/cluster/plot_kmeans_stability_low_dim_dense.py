@@ -18,6 +18,7 @@ estimator using a ``init="random"`` and ``n_init=1``. This run leads to
 a bad convergence (local optimum) with estimated centers stuck
 between ground truth clusters.
 
+
 The dataset used for evaluation is a 2D grid of isotropic Gaussian
 clusters widely spaced.
 """
@@ -101,7 +102,7 @@ plt.title("Mean inertia for various k-means init across %d runs" % n_runs)
 
 # Part 2: Qualitative visual inspection of the convergence
 
-X, y = make_data(random_state, n_samples_per_center, grid_size, scale)
+X, y = make_data(random_state, n_samples_per_center, lssgrid_size, scale)
 km = MiniBatchKMeans(n_clusters=n_clusters, init='random', n_init=1,
                      random_state=random_state).fit(X)
 
